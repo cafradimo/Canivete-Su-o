@@ -1,0 +1,265 @@
+def criar_pagina_canivete():
+    html = """
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canivete Suíço Python</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 20px 20px;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .creator-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .creator-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #2575fc;
+        }
+        .btn-run {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            border: none;
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-weight: 500;
+        }
+        .output-container {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            min-height: 100px;
+            font-family: 'Courier New', monospace;
+        }
+        .feature-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #ff4757;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">🧰 Canivete Suíço Python</h1>
+            <p class="lead">Um conjunto de ferramentas úteis para o dia a dia</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="creator-section">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center">
+                    <img src="https://uploaddeimagens.com.br/images/004/872/337/thumb/foto_doc.jpg
+                    " alt="Foto do Criador" class="creator-photo">
+                </div>
+                <div class="col-md-9">
+                    <h2>Sobre o Desenvolvedor</h2>
+                    <p>Olá! Meu nome é Carlos Franklin, sou desenvolvedor Python e criei esta página chamada Canivete Suíço Digital, para participar de um desafio, que compartilha ferramentas úteis a partir de um código fornecido.</p>
+                    <p>Esta aplicação foi criada com o objetivo de fornecer utilitários práticos para o dia a dia de outros desenvolvedores e entusiastas de tecnologia.</p>
+                    <p><strong>Localização:</strong> Rio de Janeiro - RJ - Brasil</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-center mb-4">Ferramentas Disponíveis</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="card-icon">🔐</div>
+                        <h5 class="card-title">Gerador de Senha</h5>
+                        <p class="card-text">Gere senhas seguras com diversos caracteres.</p>
+                        <div class="input-group mb-3">
+                            <input type="number" id="password-length" class="form-control" placeholder="Tamanho" value="12" min="6" max="50">
+                            <button class="btn btn-run" onclick="runPythonScript('1')">Executar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="card-icon">🧠</div>
+                        <h5 class="card-title">Contador de Palavras</h5>
+                        <p class="card-text">Conte palavras e caracteres em um texto.</p>
+                        <div class="mb-3">
+                            <textarea id="word-count-text" class="form-control" rows="2" placeholder="Digite seu texto"></textarea>
+                        </div>
+                        <button class="btn btn-run" onclick="runPythonScript('2')">Executar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="card-icon">🧮</div>
+                        <h5 class="card-title">Calculadora</h5>
+                        <p class="card-text">Realize cálculos matemáticos complexos.</p>
+                        <div class="input-group mb-3">
+                            <input type="text" id="calculator-expression" class="form-control" placeholder="Ex: 2+5*3">
+                            <button class="btn btn-run" onclick="runPythonScript('3')">Executar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="card-icon">📆</div>
+                        <h5 class="card-title">Data e Hora</h5>
+                        <p class="card-text">Obtenha informações sobre a data e hora atual.</p>
+                        <button class="btn btn-run" onclick="runPythonScript('4')">Executar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="card-icon">⏱</div>
+                        <h5 class="card-title">Temporizador</h5>
+                        <p class="card-text">Configure um timer para contagem regressiva.</p>
+                        <div class="input-group mb-3">
+                            <input type="number" id="timer-seconds" class="form-control" placeholder="Segundos" value="10" min="1" max="3600">
+                            <button class="btn btn-run" onclick="runPythonScript('5')">Executar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="card-icon">🎲</div>
+                        <h5 class="card-title">Rolagem de Dado</h5>
+                        <p class="card-text">Simule a rolagem de um dado virtual.</p>
+                        <div class="input-group mb-3">
+                            <input type="number" id="dice-sides" class="form-control" placeholder="Lados do dado" value="6" min="2" max="100">
+                            <button class="btn btn-run" onclick="runPythonScript('6')">Rolar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="output-container mt-4">
+            <h4>Saída:</h4>
+            <div id="output" class="mt-2"></div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 mt-4 bg-light">
+        <div class="container">
+            <p class="mb-0">© 2025 Canivete Suíço Python - Desenvolvido por Carlos Franklin</p>
+        </div>
+    </footer>
+
+    <script>
+        function runPythonScript(option) {
+            const output = document.getElementById('output');
+            output.innerHTML = '<div class="text-center py-4"><div class="spinner-border text-primary" role="status"></div><p class="mt-2">Processando...</p></div>';
+            
+            // Simulação da execução do Python (substituir por chamada real ao backend)
+            setTimeout(() => {
+                let result = '';
+                
+                switch(option) {
+                    case '1':
+                        const length = document.getElementById('password-length').value || 12;
+                        result = `<p><strong>Senha gerada:</strong> ${generateRandomPassword(length)}</p>`;
+                        break;
+                    case '2':
+                        const text = document.getElementById('word-count-text').value || '';
+                        const words = text.trim() === '' ? 0 : text.trim().split(/\\s+/).length;
+                        const chars = text.length;
+                        result = `<p><strong>Total de palavras:</strong> ${words}</p><p><strong>Total de caracteres:</strong> ${chars}</p>`;
+                        break;
+                    case '3':
+                        const expr = document.getElementById('calculator-expression').value || '';
+                        try {
+                            const calcResult = eval(expr);
+                            result = `<p><strong>Expressão:</strong> ${expr}</p><p><strong>Resultado:</strong> ${calcResult}</p>`;
+                        } catch(e) {
+                            result = `<p class="text-danger"><strong>Erro:</strong> Expressão inválida</p>`;
+                        }
+                        break;
+                    case '4':
+                        const now = new Date();
+                        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                        result = `<p><strong>Data:</strong> ${now.toLocaleDateString('pt-BR')}</p>
+                                 <p><strong>Hora:</strong> ${now.toLocaleTimeString('pt-BR')}</p>
+                                 <p><strong>Dia da semana:</strong> ${now.toLocaleDateString('pt-BR', {weekday: 'long'})}</p>`;
+                        break;
+                    case '5':
+                        const seconds = document.getElementById('timer-seconds').value || 10;
+                        result = `<p>Temporizador configurado para ${seconds} segundos</p>
+                                 <p>⏱ Contagem regressiva simulada...</p>`;
+                        break;
+                    case '6':
+                        const sides = document.getElementById('dice-sides').value || 6;
+                        const roll = Math.floor(Math.random() * sides) + 1;
+                        result = `<p>🎲 Dado de ${sides} lados rolado: <strong>${roll}</strong></p>`;
+                        break;
+                }
+                
+                output.innerHTML = result;
+            }, 1000);
+        }
+        
+        function generateRandomPassword(length) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+            let password = '';
+            for (let i = 0; i < length; i++) {
+                password += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return password;
+        }
+    </script>
+</body>
+</html>
